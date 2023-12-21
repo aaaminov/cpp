@@ -10,11 +10,13 @@ void test(){
 
 ## N^2 
 
-```  void Swap(int& a, int& b) {
+```
+void Swap(int& a, int& b) {
     int c = a;
     a = b;
     b = c;
-  } ```
+  }
+```
 
 ### 1.  Selection sort
 ```
@@ -50,13 +52,16 @@ void test(){
 
 ## N
 
-```  void Swap(int& a, int& b) {
+```
+void Swap(int& a, int& b) {
     int c = a;
     a = b;
     b = c;
-  } ```
+  } 
+```
 
 ### 1. Merge Sort
+
 ```
   void Merge(int* a, int n, int* b, int m, int* c) {
     if (c != nullptr) {
@@ -78,6 +83,7 @@ void test(){
         i++;
       }  }   }
 ```
+
 ```
   void MergeSort(int* a, int n, int* buff = nullptr) {
     if (n <= 1) { return;  }
@@ -110,11 +116,13 @@ void test(){
 
 # NLog(N)
 
-```  void Swap(int& a, int& b) {
+```
+void Swap(int& a, int& b) {
     int c = a;
     a = b;
     b = c;
-  } ```
+  } 
+```
 
 ### 1.1. Q Hoar
 
@@ -131,7 +139,8 @@ void test(){
       } while (a[j] > a[pivot]);
       if (i >= j) {  return j + 1; }
       Swap(a[i], a[j]);
-    } } ```
+    } } 
+```
 
 ### 1.2. Q Lomuto
 ```
@@ -144,7 +153,8 @@ void test(){
         if (i != j) {
           Swap(a[i], a[j]);
         } } }
-    return i; } ```
+    return i; } 
+```
 
 #### Quick
 ```
@@ -154,7 +164,8 @@ void test(){
     int i = Partition_Hoar(a, n, pivot);
     QuickSort(a, i);
     QuickSort(a + i, n - i);
-  } ```
+  }
+```
 
 ### 2. Counting Sort
 ```
@@ -176,7 +187,8 @@ void test(){
     for (int i = 0; i < n; i++) {  // в исходный массив, чтоб без return
       arr[i] = b[i];
     }
-    delete[] b;  } ```
+    delete[] b;  } 
+```
 
 # BackPack
 ### Кража 
@@ -218,16 +230,19 @@ void test(){
     delete[] costs;
     delete[] max_costs;
     delete[] max_weights;
-  } ```
+  } 
+```
 
 # ATD
 `1. list
 ### 2. Heap
- ``` void Swap(int& a, int& b) {
+ ```
+ void Swap(int& a, int& b) {
     int c = a;
     a = b;
     b = c;
-  } ```
+  } 
+```
 ```
   void SiftUp(int* a, int i, int& index_added) {
     while (i > 0) {
@@ -304,17 +319,20 @@ void test(){
       Swap(a[0], a[n - 1 - i]);        // первый = max => свап с последним
       size--;
       SiftDown(a, 0, size);
-    } } ```
+    } } 
+```
 
 # Tree
 ### 1. BinarySearchTree
 
-```  struct Node {
+```
+struct Node {
     int value;
     Node* left = nullptr;
     Node* right = nullptr;
     Node* parent = nullptr;
-  }; ```
+  }; 
+```
 private:
 ```
   Node* root_ = nullptr;
@@ -331,7 +349,8 @@ private:
     }
     if (right) {
       Clear(right);
-    } } ```
+    } } 
+```
 public:
 ```
   bool Push(int x, Node* node = nullptr) {
@@ -386,7 +405,8 @@ public:
     explicit Node(int x) {
       y = rand();
       key = x;
-    } ```
+    } 
+```
 
 private:
 ```
@@ -484,7 +504,8 @@ private:
       return Find(t->right, key);
     }
     return false;  // for CE
-  } ```
+  }
+```
 public:
 ```
   int GetMin() {
@@ -513,15 +534,16 @@ public:
 
   void Pop(int key) {  Remove(root_, key); }
 
-  ~Decartovoe() {  Clear(root_);  } ```
+  ~Decartovoe() {  Clear(root_);  } 
+```
 
 ### AVL
-
-```    explicit Node(int x) {
+```
+    explicit Node(int x) {
       key = x;
       height = 1;
-    } ```
-
+    } 
+```
 private:
 ```
   Node* root_ = nullptr;
@@ -570,7 +592,8 @@ private:
       }
       return BigRightRotate(node);
     }
-    return node; } ```
+    return node; } 
+```
 Rotate
 ```
   Node* LeftRotate(Node* a) {
@@ -593,7 +616,8 @@ Rotate
 
     FixHeight(b->right);
     FixHeight(b);
-    return b; } ```
+    return b; } 
+```
 Big Rotate
 ```
   Node* BigLeftRotate(Node* a) {
@@ -626,7 +650,8 @@ Big Rotate
     FixHeight(a);
     FixHeight(b);
     FixHeight(c);
-    return c;  } ```
+    return c;  } 
+```
 ```
   Node* Insert(Node* node, int key) {
     if (node == nullptr) {
@@ -688,8 +713,8 @@ Big Rotate
     std::cout << node->key << "\n";
     if (node->right) {
       Print(node->right);
-    }  } ```
-
+    }  } 
+```
 public:
 ```
   void Insert(int key) {  root_ = Insert(root_, key); }
@@ -700,6 +725,7 @@ public:
 
   void Clear() { Clear(root_);   }
 
-  ~AVLTree() { Clear(); } ```
+  ~AVLTree() { Clear(); } 
+```
 
 
