@@ -652,7 +652,7 @@ Big Rotate
     FixHeight(c);
     return c;  } 
 ```
-
+# lol
 ```
   Node* Insert(Node* node, int key) {
     if (node == nullptr) {
