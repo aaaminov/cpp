@@ -599,10 +599,10 @@ Rotate
   Node* LeftRotate(Node* a) {
     Node* c = a->right->left;
     Node* b = a->right;
-
+.
     b->left = a;
     a->right = c;
-
+.
     FixHeight(b->left);
     FixHeight(b);
     return b; }
@@ -610,10 +610,10 @@ Rotate
   Node* RightRotate(Node* a) {
     Node* c = a->left->right;
     Node* b = a->left;
-
+.
     b->right = a;
     a->left = c;
-
+.
     FixHeight(b->right);
     FixHeight(b);
     return b; } 
@@ -625,12 +625,12 @@ Big Rotate
     Node* c = b->left;
     Node* m = c->left;
     Node* n = c->right;
-
+.
     a->right = m;
     b->left = n;
     c->left = a;
     c->right = b;
-
+.
     FixHeight(a);
     FixHeight(b);
     FixHeight(c);
@@ -641,18 +641,18 @@ Big Rotate
     Node* c = b->right;
     Node* m = c->left;
     Node* n = c->right;
-
+.
     a->left = n;
     b->right = m;
     c->right = a;
     c->left = b;
-
+.
     FixHeight(a);
     FixHeight(b);
     FixHeight(c);
     return c;  } 
 ```
-# lol
+
 ```
   Node* Insert(Node* node, int key) {
     if (node == nullptr) {
