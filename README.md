@@ -394,8 +394,8 @@ public:
       Print(node->right);
     } }
 
-  ~BinarySearchTree() { Clear(root_); } ```
-
+  ~BinarySearchTree() { Clear(root_); }
+```
 
 ### 2. Decartovoe
 ```
