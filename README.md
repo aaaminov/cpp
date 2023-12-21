@@ -652,6 +652,7 @@ Big Rotate
     FixHeight(c);
     return c;  } 
 ```
+
 ```
   Node* Insert(Node* node, int key) {
     if (node == nullptr) {
@@ -713,7 +714,7 @@ Big Rotate
     std::cout << node->key << "\n";
     if (node->right) {
       Print(node->right);
-    }  } 
+    } }
 ```
 public:
 ```
