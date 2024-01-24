@@ -234,7 +234,7 @@ void Swap(int& a, int& b) {
 ```
 
 # ATD
-`1. list
+1. list
 ### 2. Heap
  ```cpp
  void Swap(int& a, int& b) {
