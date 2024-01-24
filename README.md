@@ -10,7 +10,7 @@ void test(){
 
 ## N^2 
 
-```
+```cpp
 void Swap(int& a, int& b) {
     int c = a;
     a = b;
@@ -19,7 +19,7 @@ void Swap(int& a, int& b) {
 ```
 
 ### 1.  Selection sort
-```
+```cpp
   void SelectionSort(int* array, int n) {
     for (int i = 0; i < n - 1; i++) {
       for (int j = i + 1; j < n; j++) {
@@ -29,7 +29,7 @@ void Swap(int& a, int& b) {
 ```
 
 ### 2. Insection Sort
-```
+```cpp
   void InsectionSort(int* array, int n) {
     int j;
     for (int i = 0; i < n; i++) {
@@ -41,7 +41,7 @@ void Swap(int& a, int& b) {
 ```
 
 ### 3. Bubble sort
-```
+```cpp
   void BubbleSort(int* array, int n) {
     for (int i = 0; i < n - 1; i++) {
       for (int j = 0; j < n - 1 - i; j++) {
@@ -52,7 +52,7 @@ void Swap(int& a, int& b) {
 
 ## N
 
-```
+```cpp
 void Swap(int& a, int& b) {
     int c = a;
     a = b;
@@ -62,7 +62,7 @@ void Swap(int& a, int& b) {
 
 ### 1. Merge Sort
 
-```
+```cpp
   void Merge(int* a, int n, int* b, int m, int* c) {
     if (c != nullptr) {
       int i = 0, j = 0;
@@ -84,7 +84,7 @@ void Swap(int& a, int& b) {
       }  }   }
 ```
 
-```
+```cpp
   void MergeSort(int* a, int n, int* buff = nullptr) {
     if (n <= 1) { return;  }
     if (n == 2) {
@@ -116,7 +116,7 @@ void Swap(int& a, int& b) {
 
 # NLog(N)
 
-```
+```cpp
 void Swap(int& a, int& b) {
     int c = a;
     a = b;
@@ -126,7 +126,7 @@ void Swap(int& a, int& b) {
 
 ### 1.1. Q Hoar
 
-```
+```cpp
   int Partition_Hoar(int* a, int n, int pivot) {
     int i = -1;
     int j = n;
@@ -143,7 +143,7 @@ void Swap(int& a, int& b) {
 ```
 
 ### 1.2. Q Lomuto
-```
+```cpp
   int Partition_Lomuto(int* a, int n) {
     int pivot = n;
     int i = -1;
@@ -157,7 +157,7 @@ void Swap(int& a, int& b) {
 ```
 
 #### Quick
-```
+```cpp
   void QuickSort(int* a, int n) {
     if (n == 1) {  return; }
     int pivot = n / 2;
@@ -168,7 +168,7 @@ void Swap(int& a, int& b) {
 ```
 
 ### 2. Counting Sort
-```
+```cpp
   void CountingSort(int* arr, int n, int min, int max) {
     int k = max - min + 1;
     int* a = new int[k] {};
@@ -192,7 +192,7 @@ void Swap(int& a, int& b) {
 
 # BackPack
 ### Кража 
-```
+```cpp
   void Craja() {
     int max_weight;
     int n;
@@ -236,7 +236,7 @@ void Swap(int& a, int& b) {
 # ATD
 `1. list
 ### 2. Heap
- ```
+ ```cpp
  void Swap(int& a, int& b) {
     int c = a;
     a = b;
@@ -325,7 +325,7 @@ void Swap(int& a, int& b) {
 # Tree
 ### 1. BinarySearchTree
 
-```
+```cpp
 struct Node {
     int value;
     Node* left = nullptr;
@@ -334,7 +334,7 @@ struct Node {
   }; 
 ```
 private:
-```
+```cpp
   Node* root_ = nullptr;
 
   void Clear(Node* node = nullptr) {
@@ -352,7 +352,7 @@ private:
     } } 
 ```
 public:
-```
+```cpp
   bool Push(int x, Node* node = nullptr) {
     if (root_ == nullptr) {
       auto* new_node = new Node;
@@ -398,7 +398,7 @@ public:
 ```
 
 ### 2. Decartovoe
-```
+```cpp
     Node() {
       y = rand();
     }
@@ -409,7 +409,7 @@ public:
 ```
 
 private:
-```
+```cpp
   Node* root_ = nullptr;
 
   void Clear(Node* node = nullptr) {
@@ -507,7 +507,7 @@ private:
   }
 ```
 public:
-```
+```cpp
   int GetMin() {
     if (root_) {
       Node* runner = root_;
@@ -538,14 +538,14 @@ public:
 ```
 
 ### AVL
-```
+```cpp
     explicit Node(int x) {
       key = x;
       height = 1;
     } 
 ```
 private:
-```
+```cpp
   Node* root_ = nullptr;
 
   void Clear(Node* node) {
@@ -595,7 +595,7 @@ private:
     return node; } 
 ```
 Rotate
-```
+```cpp
   Node* LeftRotate(Node* a) {
     Node* c = a->right->left;
     Node* b = a->right;
@@ -619,7 +619,7 @@ Rotate
     return b; } 
 ```
 Big Rotate
-```
+```cpp
   Node* BigLeftRotate(Node* a) {
     Node* b = a->right;
     Node* c = b->left;
@@ -652,7 +652,7 @@ Big Rotate
     FixHeight(c);
     return c;  } 
 ```
-```
+```cpp
   Node* Insert(Node* node, int key) {
     if (node == nullptr) {
       auto node = new Node(key);
@@ -716,7 +716,7 @@ Big Rotate
     }  } 
 ```
 public:
-```
+```cpp
   void Insert(int key) {  root_ = Insert(root_, key); }
 
   void Remove(int key) { root_ = Remove(root_, key);  }
