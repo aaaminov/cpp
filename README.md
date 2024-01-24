@@ -243,7 +243,7 @@ void Swap(int& a, int& b) {
     b = c;
   } 
 ```
-```
+```cpp
   void SiftUp(int* a, int i, int& index_added) {
     while (i > 0) {
       int p_i = (i - 1) / 2;
