@@ -71,7 +71,7 @@ void Swap(int& a, int& b) {
         }  }  }  }
 ```
 
-## N
+## NLog(N)
 
 ```cpp
 void Swap(int& a, int& b) {
@@ -135,7 +135,7 @@ void Swap(int& a, int& b) {
   }
 ```
 
-# NLog(N)
+# NLog(N) еще
 
 ```cpp
 void Swap(int& a, int& b) {
