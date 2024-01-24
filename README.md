@@ -5,6 +5,27 @@ void test(){
   std::cout.tie(0);
 }
 ```
+## Bin Search
+```cpp
+int BinSearch(int* a, int l, int r, int x) {
+  int middle = (l + r) / 2;
+  if (x < a[middle]) {
+    if (middle != r) {
+      return BinSearch(a, l, middle, x);
+    }
+    return -1;
+  } else if (a[middle] < x) {
+    if (middle != l) {
+      return BinSearch(a, middle, r, x);
+    }
+    return -1;
+  } else if (x == a[middle]) {
+    return middle + 1;
+  } else {
+    return -1;
+  }
+}
+```
 
 # Sorts
 
