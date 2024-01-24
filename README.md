@@ -750,3 +750,98 @@ public:
 ```
 
 
+# НОП - за O(N*M)
+
+```cpp
+void FindNOP(int* a, int n, int* b, int m, int** dp) {
+  for (int i = 1; i < n + 1; i++) {
+    for (int j = 1; j < m + 1; j++) {
+      dp[i][j] = Max(dp[i - 1][j], dp[i][j - 1]);
+      if (a[i - 1] == b[j - 1]) {
+        dp[i][j] = Max(dp[i - 1][j - 1] + 1, dp[i][j]);
+      }
+    }
+  }
+}
+
+void PrintNOP(int* a, int i, int* b, int j, int** dp) {
+  if (i <= 0 || j <= 0) {
+    return;
+  }
+  if (a[i - 1] == b[j - 1] && dp[i][j] == dp[i - 1][j - 1] + 1) {
+    PrintNOP(a, i - 1, b, j - 1, dp);
+    std::cout << a[i - 1] << " ";
+  } else {
+    if (dp[i - 1][j] > dp[i][j - 1]) {
+      PrintNOP(a, i - 1, b, j, dp);
+    } else {
+      PrintNOP(a, i, b, j - 1, dp);
+    }
+  }
+}
+```
+
+# НВП - за O(N^2)
+
+```cpp
+int FindNVP(int* a, int n, int* dp) {
+  int last = 0;
+  for (int i = 0; i < n; i++) {
+    dp[i] = 1;
+    for (int k = 0; k < i; k++) {
+      if (dp[k] + 1 > dp[i] && a[k] < a[i]) {
+        dp[i] = dp[k] + 1;
+      }
+    }
+    if (dp[i] > dp[last]) {
+      last = i;
+    }
+  }
+  return last;
+}
+
+void PrintNVP(int* a, int current, int* dp) {
+  for (int i = current; i >= 0; i--) {
+    if (dp[i] == dp[current] - 1) {
+      PrintNVP(a, i, dp);
+      break;
+    }
+  }
+  std::cout << a[current] << " ";
+}
+```
+
+# НВП - за O(N logN)
+
+```cpp
+#define INFINITY 100'001
+
+int BinSearch(int* array, int n, int x) {
+  int l = 0;
+  int r = n;
+  int m;
+  while (l < r - 1) {
+    m = (l + r) / 2;
+    if (array[m] >= x) {
+      r = m;
+    } else {
+      l = m;
+    }
+  }
+  return r;
+}
+
+int FindNVP(int* a, int n, int* dp) {
+  int max = 0;
+  for (int i = 0; i < n; i++) {
+    int p = BinSearch(dp, n, a[i]);
+    if (dp[p - 1] < a[i] && a[i] < dp[p]) {
+      dp[p] = a[i];
+      if (p > max) {
+        max = p;
+      }
+    }
+  }
+  return max;
+}
+```
